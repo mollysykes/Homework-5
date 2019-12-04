@@ -10,10 +10,18 @@ public class Reading {
         this.rainfall = rainfall;
     }
 
+    /**
+     * Determines the temperature value from the reading
+     * @return the temperature data
+     */
     public double getTemp(){
         return this.temp;
     }
 
+    /**
+     * Determines the rainfall value from the reading
+     * @return the rainfall data
+     */
     public double getRainfall(){
         return this.rainfall;
     }
