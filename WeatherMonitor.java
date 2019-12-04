@@ -1,4 +1,5 @@
 import com.sun.xml.internal.bind.v2.model.core.ID;
+import sun.awt.image.ImageWatched;
 
 import java.util.GregorianCalendar;
 import java.util.LinkedList;
@@ -35,12 +36,15 @@ public class WeatherMonitor {
         return sum/cleanedData.size();
     }
 
-    public void addDailyReport(){
-        reports.addReport(GregorianCalendar date, LinkedList<>){
+    public void addDailyReport(GregorianCalendar date, LinkedList<Reading> readings){
 
+        DailyWeatherReport dw = new DailyWeatherReport(date);
+
+        for(Reading r : readings){
+            dw.addTemp(r.getTemp());
+            dw.addRain(r.getRainfall());
         }
 
+        reports.addReport(dw);
     }
-
-
 }

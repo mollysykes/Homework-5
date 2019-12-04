@@ -7,10 +7,18 @@ public class DailyWeatherReport {
     private LinkedList<Double> temperature;
     private LinkedList<Double> rainfall;
 
-    private DailyWeatherReport (GregorianCalendar date, LinkedList<Double> temperature, LinkedList<Double> rainfall){
+    public DailyWeatherReport (GregorianCalendar date){
         this.date = date;
-        this.temperature = temperature;
-        this.rainfall = rainfall;
+        temperature = new LinkedList<Double>();
+        rainfall = new LinkedList<Double>();
+    }
+
+    public void addTemp(Double d){
+        temperature.add(d);
+    }
+
+    public void addRain(Double d){
+        rainfall.add(d);
     }
 
     public double getAverageTemp(){
